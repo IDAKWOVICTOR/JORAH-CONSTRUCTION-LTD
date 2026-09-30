@@ -17,7 +17,8 @@ COMPANY = {
     "tagline": "Building a Sustainable Tomorrow",
     "type": "A Private Company Limited by Shares",
     "rc": "9896662",
-    "office": "Federal Republic of Nigeria",
+    "office": "Department of Urban and Regional Planning, Faculty of Environmental Science, University of Jos, Jos, Plateau State, Nigeria",
+    "scope": "General Construction, Civil Engineering, Construction & Project Management Consultancy, Urban & Regional Planning, Land-Use & Spatial Planning, Property & Infrastructure Development, Building Maintenance, Construction Materials Supply and other Allied Built-Environment Services.",
     "phone": "+234 806 726 0801",
     "email": "jorahconstructions@gmail.com",
     "website": "",
@@ -30,16 +31,37 @@ FOUNDER = {
 }
 
 SERVICES = [
-    ("travel_explore", "Drone Survey & Mapping", "Accurate data. Better decisions.",
-     ["Aerial mapping & photogrammetry", "Topographic surveys", "Progress monitoring"]),
-    ("view_in_ar", "BIM Services", "Smarter design. Efficient construction. Greater value.",
-     ["3D modelling & coordination", "Clash detection", "Lifecycle management"]),
-    ("layers", "GIS & Spatial Analysis", "Data-driven insights for better planning.",
-     ["Spatial data analysis", "Thematic mapping", "Decision support systems"]),
-    ("straighten", "Land Survey & Mapping", "Precision. Accuracy. Reliability.",
-     ["Boundary & cadastral surveys", "Control surveys", "As-built surveys"]),
-    ("engineering", "Construction & Engineering", "From concept to completion.",
-     ["Building & infrastructure", "Project management", "Civil engineering solutions"]),
+    ("engineering", "Construction & Civil Engineering", "Buildings, roads, bridges and drainage.",
+     ["Building construction & structural works", "Roads, bridges, culverts & drainage",
+      "Earthworks, excavation & concrete works", "Main, sub and specialist contracting"]),
+    ("assignment", "Project Management & Consultancy", "From feasibility to handover.",
+     ["Planning, feasibility & project appraisal", "Cost, programme & procurement management",
+      "Contract administration & supervision", "Quality control & risk management"]),
+    ("map", "Urban, Regional & Spatial Planning", "Plans that guide orderly growth.",
+     ["Master, structure & local plans", "Urban renewal & neighbourhood plans",
+      "Land-use assessment & site planning", "Development control consultancy"]),
+    ("apartment", "Property & Real Estate Development", "Acquire, develop, manage.",
+     ["Residential, commercial & mixed-use", "Redevelopment & rehabilitation",
+      "Property management & leasing", "Development appraisal & advisory"]),
+    ("add_road", "Infrastructure Development", "Public and private infrastructure.",
+     ["Roads & bridges", "Drainage & water infrastructure",
+      "Utility infrastructure", "Rehabilitation & management"]),
+    ("home_repair_service", "Building Maintenance & Rehabilitation", "Keeping assets performing.",
+     ["Preventive & corrective maintenance", "Refurbishment & renovation",
+      "Upgrading & improvement", "Facilities-related services"]),
+    ("inventory_2", "Materials, Plant & Equipment Supply", "Procurement and supply chain.",
+     ["Cement, steel, blocks, roofing & finishes", "Plumbing & electrical materials",
+      "Plant, machinery & tools", "Procurement & supply-chain services"]),
+    ("school", "Training & Technical Advisory", "Building capacity in the built environment.",
+     ["Construction & project management", "Property & infrastructure development",
+      "Planning & maintenance", "Research, surveys & technical studies"]),
+]
+
+TECH = [
+    ("travel_explore", "Drone Survey & Mapping", "Aerial mapping & photogrammetry, topographic surveys, progress monitoring."),
+    ("view_in_ar", "BIM Services", "3D modelling & coordination, clash detection, lifecycle management."),
+    ("layers", "GIS & Spatial Analysis", "Spatial data analysis, thematic mapping, decision support systems."),
+    ("straighten", "Land Survey & Mapping", "Boundary & cadastral, control and as-built surveys."),
 ]
 
 VALUES = [
@@ -50,10 +72,10 @@ VALUES = [
 ]
 
 PROCESS = [
-    ("01", "Survey & Plan", "Drone, GNSS and total-station data establish the ground truth."),
-    ("02", "Model & Design", "BIM coordination resolves clashes before they reach site."),
+    ("01", "Plan & Appraise", "Feasibility, planning and cost appraisal define scope and budget."),
+    ("02", "Design & Coordinate", "Designs and BIM coordination resolve clashes before they reach site."),
     ("03", "Build", "Supervised construction to specification, programme and budget."),
-    ("04", "Monitor & Hand Over", "Progress mapping, as-built surveys and clean handover."),
+    ("04", "Monitor & Hand Over", "Quality control, progress monitoring and clean handover."),
 ]
 
 PORTFOLIO = {
@@ -230,7 +252,7 @@ html {{ scroll-behavior:smooth; }}
 
 /* ---------- services ---------- */
 .svc-wrap {{ background:linear-gradient(180deg,#fff,var(--g50)); padding-bottom:90px; margin-top:80px; }}
-.services {{ display:grid; grid-template-columns:repeat(5,1fr); gap:18px; padding:0 6vw; }}
+.services {{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; padding:0 6vw; }}
 .svc {{ background:#fff; border-radius:18px; padding:28px 22px 26px; border:1px solid var(--line);
   position:relative; overflow:hidden; transition:.35s; }}
 .svc::before {{ content:""; position:absolute; left:0; top:0; height:4px; width:100%;
@@ -245,8 +267,28 @@ html {{ scroll-behavior:smooth; }}
 .svc ul {{ list-style:none; padding:0; margin:0; }}
 .svc li {{ font-size:.86rem; color:#3c5145; padding:5px 0 5px 20px; position:relative; }}
 .svc li::before {{ content:"\\2713"; position:absolute; left:0; color:var(--g600); font-weight:800; }}
-@media (max-width:1200px) {{ .services {{ grid-template-columns:repeat(3,1fr); }} }}
+@media (max-width:1200px) {{ .services {{ grid-template-columns:repeat(2,1fr); }} }}
 @media (max-width:760px) {{ .services {{ grid-template-columns:1fr; }} }}
+
+/* ---------- technology band ---------- */
+.tech {{ margin:56px 6vw 0; border-radius:22px; padding:38px; color:#fff; position:relative; overflow:hidden;
+  background:linear-gradient(120deg,var(--g900),var(--g700)); }}
+.tech::after {{ content:""; position:absolute; right:-60px; top:-60px; width:220px; height:220px; border-radius:50%;
+  background:rgba(245,184,0,.18); }}
+.tech h3 {{ font-family:'Sora',sans-serif; margin:0 0 4px; font-size:1.4rem; color:#fff; }}
+.tech .sub {{ color:#B5D9C2; margin-bottom:24px; }}
+.tech .grid {{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; position:relative; z-index:2; }}
+.tech .it {{ background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); border-radius:14px;
+  padding:20px; transition:.3s; }}
+.tech .it:hover {{ background:rgba(255,255,255,.15); transform:translateY(-4px); }}
+.tech .it .ms {{ color:var(--gold); font-size:1.9rem; }}
+.tech .it h4 {{ font-family:'Sora',sans-serif; margin:10px 0 6px; font-size:.98rem; color:#fff; }}
+.tech .it p {{ margin:0; color:#D4ECDC; font-size:.84rem; line-height:1.55; }}
+@media (max-width:1000px) {{ .tech .grid {{ grid-template-columns:1fr 1fr; }} }}
+@media (max-width:560px) {{ .tech .grid {{ grid-template-columns:1fr; }} }}
+.hero p.scope {{ font-size:.9rem; color:#B5D9C2; max-width:640px; line-height:1.6; margin:-14px 0 30px;
+  border-left:3px solid var(--gold); padding-left:14px; }}
+.footer .legal {{ font-size:.75rem; color:#8FB9A0; margin-top:6px; }}
 
 /* ---------- process ---------- */
 .process {{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; padding:0 6vw; position:relative; }}
@@ -348,6 +390,7 @@ html(f"""
     <h1>Innovative solutions for <em>modern infrastructure.</em></h1>
     <p class="lead">We deliver high-quality construction, engineering and technology-driven solutions
     for a sustainable and resilient future.</p>
+    <p class="scope">{COMPANY['scope']}</p>
     <div class="btns"><a class="btn-gold" href="#projects">View Our Projects</a>
     <a class="btn-ghost" href="#contact">Start a Project</a></div>
   </div>
@@ -355,7 +398,7 @@ html(f"""
   <strong>No. {COMPANY['rc']}</strong></div></div>
 </div>
 <div class="stats">
-  <div class="stat"><b>5</b><span>CORE SERVICE LINES</span></div>
+  <div class="stat"><b>8</b><span>SERVICE AREAS</span></div>
   <div class="stat"><b>BIM + GIS</b><span>TECHNOLOGY-DRIVEN</span></div>
   <div class="stat"><b>Registered</b><span>BUILDER-LED</span></div>
   <div class="stat"><b>{COMPANY['rc']}</b><span>CORPORATE REG. NO.</span></div>
@@ -371,10 +414,12 @@ section_head("Who we are", "Construction, engineered with technology",
 html(f"""
 <div class="about">
   <div>
-    <p><strong>{COMPANY['name']}</strong> is a Nigerian {COMPANY['type'].lower().replace('a private', 'private')}
-    that brings construction, engineering and geospatial technology under one roof.</p>
-    <p>We combine site-proven building expertise with drone surveys, BIM coordination and GIS analysis,
-    so every decision, from land acquisition to lifecycle management, is backed by accurate data.
+    <p><strong>{COMPANY['name']}</strong> is a Nigerian private company limited by shares delivering
+    general construction and civil engineering, project management and consultancy, urban, regional and
+    land-use planning, property and infrastructure development, building maintenance and construction
+    materials supply.</p>
+    <p>We pair site-proven building expertise with modern technology, including drone surveys, BIM
+    coordination and GIS analysis, so decisions from feasibility to handover are backed by accurate data.
     The result is infrastructure that is precise, cost-effective and delivered on time.</p>
     <p style="font-weight:700;color:var(--g800)">From concept to completion, we build with precision,
     technology and integrity.</p>
@@ -403,17 +448,23 @@ cards = "".join(
     f'<ul>{"".join(f"<li>{x}</li>" for x in items)}</ul></div>'
     for ic, t, tag, items in SERVICES
 )
+tech_items = "".join(
+    f'<div class="it">{icon(i)}<h4>{t}</h4><p>{d}</p></div>' for i, t, d in TECH
+)
 html('<div class="svc-wrap"><div class="pad" style="padding-bottom:0"></div>'
      + head_html("What we do", "Our Services",
-                 "Five integrated service lines covering the full project lifecycle.", "services")
-     + f'<div class="services">{cards}</div></div>')
+                 "Integrated built-environment services covering the full project lifecycle.", "services")
+     + f'<div class="services">{cards}</div>'
+     + '<div class="tech"><h3>Technology &amp; Geospatial</h3>'
+     + '<div class="sub">Data-driven capability that strengthens every service above.</div>'
+     + f'<div class="grid">{tech_items}</div></div></div>')
 
 # --------------------------------------------------------------------------- #
 # Process
 # --------------------------------------------------------------------------- #
 html('<div class="pad"></div>')
 section_head("How we work", "From concept to completion",
-             "A data-first workflow that removes surprises from site.", anchor="process")
+             "A disciplined workflow that removes surprises from site.", anchor="process")
 html('<div class="process">' + "".join(
     f'<div class="step"><div class="n">{n}</div><h4>{t}</h4><p>{d}</p></div>' for n, t, d in PROCESS
 ) + "</div>")
@@ -495,7 +546,7 @@ with right:
         c1, c2 = st.columns(2)
         name = c1.text_input("Full name*")
         contact = c2.text_input("Phone or email*")
-        interest = st.selectbox("I am interested in", [s[1] for s in SERVICES])
+        interest = st.selectbox("I am interested in", [s[1] for s in SERVICES + TECH])
         message = st.text_area("Project details", height=120)
         if st.form_submit_button("Send enquiry"):
             if name.strip() and contact.strip():
@@ -520,6 +571,7 @@ html(f"""
     <div class="m">INNOVATION &nbsp;|&nbsp; INTEGRITY &nbsp;|&nbsp; IMPACT</div>
   </div>
   <hr>
-  <div class="c">&copy; {datetime.now().year} {COMPANY['name']}. RC {COMPANY['rc']}. All rights reserved.</div>
+  <div class="legal">Activities subject to statutory licensing or professional regulation are undertaken only with the requisite licences, registrations and approvals.</div>
+  <div class="c" style="margin-top:10px">&copy; {datetime.now().year} {COMPANY['name']}. RC {COMPANY['rc']}. All rights reserved.</div>
 </div>
 """)
