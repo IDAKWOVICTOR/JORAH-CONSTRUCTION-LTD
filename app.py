@@ -30,6 +30,17 @@ FOUNDER = {
     "credential": "Registered Builder",
 }
 
+DIRECTORS = [
+    ("Bldr. John Ndi Laki", "Founder & Chief Executive Officer", "MNIOB \u00b7 Registered Builder"),
+    ("Tpl. Rahila Samson Chiroma", "Director", ""),
+    ("Bldr. Friday Chindo Samuel", "Director", "MNIOB"),
+]
+
+TECHNICAL_LEADS = [
+    ("Engr. Japhet D. Tokan", "Lead Civil Engineer", "COREN Registered Engineer"),
+    ("Tpl. Victor Iko-ojo Idakwo", "Head, GIS Technology", ""),
+]
+
 SERVICES = [
     ("engineering", "Construction & Civil Engineering", "Buildings, roads, bridges and drainage.",
      ["Building construction & structural works", "Roads, bridges, culverts & drainage",
@@ -325,6 +336,25 @@ html {{ scroll-behavior:smooth; }}
   border-bottom:2px solid var(--gold); padding:2px 0; margin-bottom:6px; }}
 .founder a.li:hover {{ color:var(--gold); }}
 
+/* ---------- team ---------- */
+.team-wrap {{ padding:80px 6vw 0; }}
+.team-title {{ font-family:'Sora',sans-serif; color:var(--g800); font-size:1.15rem; margin:0 0 18px;
+  display:flex; align-items:center; gap:14px; }}
+.team-title::after {{ content:""; flex:1; height:2px; background:linear-gradient(90deg,var(--g600),transparent); }}
+.team-grid {{ display:grid; gap:18px; margin-bottom:40px; }}
+.team-grid.three {{ grid-template-columns:repeat(3,1fr); }}
+.team-grid.two {{ grid-template-columns:repeat(2,1fr); max-width:760px; }}
+.member {{ display:flex; gap:16px; align-items:center; padding:22px; border-radius:16px; background:var(--g50);
+  border:1px solid var(--line); transition:.3s; }}
+.member:hover {{ transform:translateY(-5px); background:#fff; box-shadow:0 18px 36px rgba(6,48,27,.12); }}
+.member .av {{ flex:none; width:58px; height:58px; border-radius:50%; display:grid; place-items:center;
+  background:linear-gradient(135deg,var(--g800),var(--g600)); color:var(--gold); font-family:'Sora',sans-serif;
+  font-weight:800; border:3px solid var(--g100); }}
+.member h4 {{ font-family:'Sora',sans-serif; margin:0 0 2px; color:var(--g800); font-size:.98rem; }}
+.member .r {{ color:var(--g600); font-weight:700; font-size:.84rem; }}
+.member .c {{ color:var(--muted); font-size:.78rem; margin-top:2px; }}
+@media (max-width:900px) {{ .team-grid.three, .team-grid.two {{ grid-template-columns:1fr; }} }}
+
 /* ---------- portfolio (tabs + images) ---------- */
 .stTabs [data-baseweb="tab-list"] {{ gap:8px; justify-content:center; flex-wrap:wrap; border-bottom:none; padding:0 6vw; }}
 .stTabs [data-baseweb="tab"] {{ background:var(--g50); border-radius:99px; padding:10px 22px; height:auto;
@@ -494,6 +524,18 @@ html(f"""
 # --------------------------------------------------------------------------- #
 # Projects
 # --------------------------------------------------------------------------- #
+def member_html(name: str, role: str, cred: str) -> str:
+    parts = [w for w in name.split() if not w.endswith(".")]
+    initials = parts[0][0] + parts[-1][0]
+    return (f'<div class="member"><div class="av">{initials}</div><div><h4>{name}</h4>'
+            f'<div class="r">{role}</div>{f"<div class=c>{cred}</div>" if cred else ""}</div></div>')
+
+
+html('<div class="team-wrap"><div class="team-title">Board of Directors</div><div class="team-grid three">'
+     + "".join(member_html(*d) for d in DIRECTORS) + '</div>'
+     + '<div class="team-title">Technical Leadership</div><div class="team-grid two">'
+     + "".join(member_html(*t) for t in TECHNICAL_LEADS) + '</div></div>')
+
 html('<div class="pad"></div>')
 section_head("Track record", "Projects We Have Executed",
              "A selection of work from our sites. Hover an image and use the expand icon for full size.",
