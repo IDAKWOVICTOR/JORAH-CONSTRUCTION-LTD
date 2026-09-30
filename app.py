@@ -19,7 +19,7 @@ COMPANY = {
     "rc": "9896662",
     "office": "Federal Republic of Nigeria",
     "phone": "+234 806 726 0801",
-    "email": "lakijohn1@gmail.com",
+    "email": "jorahconstructions@gmail.com",
     "website": "",
     "linkedin": "https://www.linkedin.com/in/bldr-john-laki-mniob-014194261/",
 }
